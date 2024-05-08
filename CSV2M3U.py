@@ -11,9 +11,9 @@ def cargar_configuracion(ruta_config):
     return configuracion
 
 def crear_lista_m3u(archivo_csv, nombre_lista_m3u, enlace_formato, condicion, tipo_filtro=None):
-    with open(archivo_csv, 'r', encoding='latin-1') as csv_file:
+    with open(archivo_csv, 'r', encoding='utf-8') as csv_file:
         reader = csv.DictReader(csv_file, delimiter=';')
-        with open(nombre_lista_m3u, 'w', encoding='latin-1') as m3u_file:
+        with open(nombre_lista_m3u, 'w', encoding='utf-8') as m3u_file:
             m3u_file.write('#EXTM3U\n')
             total_generados = 0
             for row in reader:
